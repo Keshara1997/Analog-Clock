@@ -8,9 +8,12 @@ export interface HandPropType {
     showMiniuteHand?: boolean;
     showBorder?: boolean;
     showHandBase?: boolean;
-    smoothSeconds?: boolean;
+    smooth?: boolean;
+    whiteNumbers?: boolean;
+    square?: boolean;
     numbersType?: "numbers" | "dots";
     borderColor?: string;
+    backgroundColor?: string;
     handColor?: HandPropType;
     handLength?: HandPropType;
     numbersColor?: string;
@@ -18,3 +21,5 @@ export interface HandPropType {
     size?: string;
     staticDate?: Date;
   }
+
+  

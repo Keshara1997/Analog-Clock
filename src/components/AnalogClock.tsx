@@ -7,7 +7,9 @@ const AnalogClock: FC<AnalogClockProps> = ({
   showSecondHand = true,
   showBorder = true,
   showHandBase = true,
-  smoothSeconds = false,
+  smooth = false,
+  whiteNumbers = false,
+  square = false,
   numbersType = "numbers",
   borderColor = "#000000",
   numbersColor = "#000000",
@@ -16,6 +18,7 @@ const AnalogClock: FC<AnalogClockProps> = ({
   handLength = { hour: "70px", miniute: "90px", second: "90px" },
   size = "200px",
   staticDate,
+  backgroundColor = "#ffffff",
 }) => {
   const [date, setDate] = useState(staticDate || new Date());
 
@@ -59,6 +62,8 @@ const AnalogClock: FC<AnalogClockProps> = ({
         border: showBorder ? `2px solid ${borderColor}` : "none",
         width: size,
         height: size,
+        backgroundColor,
+        borderRadius: square ? "0" : "50%",
       }}
     >
       {" "}
@@ -75,7 +80,7 @@ const AnalogClock: FC<AnalogClockProps> = ({
             width: handLength.second,
             left: `50%`,
             transform: `rotate(${rotations.seconds}deg)`,
-            transition: smoothSeconds ? "transform 0.3s ease" : "none",
+            transition: smooth ? "transform 0.3s ease" : "none",
           }}
         ></div>
       )}
