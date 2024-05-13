@@ -5,21 +5,29 @@ export interface HandPropType {
   }
   export interface AnalogClockProps {
     showSecondHand?: boolean;
-    showMiniuteHand?: boolean;
+    showMinuteHand?: boolean;
     showBorder?: boolean;
     showHandBase?: boolean;
     smooth?: boolean;
     whiteNumbers?: boolean;
     square?: boolean;
-    numbersType?: "numbers" | "dots";
+    numbersType?: "numbers" | "dots" | "numbersAndLines" | "lines" | "roman";
     borderColor?: string;
     backgroundColor?: string;
     handColor?: HandPropType;
     handLength?: HandPropType;
-    numbersColor?: string;
+    handThickness?: HandPropType;
     handBaseColor?: string;
     size?: string;
     staticDate?: Date;
+    customBg?: string;
   }
 
-  
+  export interface ClockHandProps {
+    rotation: number;
+    color: string;
+    length: string;
+    thickness: string;
+    visible?: boolean;
+    smooth?: boolean;
+  }
