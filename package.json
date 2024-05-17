@@ -1,14 +1,36 @@
 {
   "name": "analogclock",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "A simple analog clock component",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "clean": "rimraf lib",
+    "copy-files": "copyfiles -e **/*.ts -e **/*.tsx -u l src/**/*.css lib/esm/src",
+    "tsc": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "prepare": "npm run tsc"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keshara1997/Analog-Clock.git"
+  },
+  "keywords": [
+    "analog",
+    "clock",
+    "react",
+    "component"
+  ],
+  "author": "Keshara1997",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Keshara1997/Analog-Clock/issues"
+  },
+  "homepage": "https://github.com/Keshara1997/Analog-Clock/blob/main/README.md",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -24,5 +46,6 @@
     "eslint-plugin-react-refresh": "^0.4.6",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
-  }
+  },
+  "main": "index.js"
 }
